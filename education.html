@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aethera Education</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+
+<div class="logo">
+Aethera
+</div>
+
+
+<div class="nav-links">
+<a href="Aethera.html">Home</a>
+<a href="ai-assistant.html">AI Assistant</a>
+<a href="health-tracker.html">Health Tracker</a>
+<a href="womens-health.html">Women's Health</a>
+<a href="education.html">Education</a>
+<a href="profile.html">Profile</a>
+</div>
+
+</nav>
+
+<header class="hero">
+
+<h1>Health Education Centre</h1>
+
+<p>Trusted health knowledge for everyone.</p>
+
+<input
+type="text"
+id="search"
+placeholder="Search health topics...">
+
+</header>
+
+<section class="categories">
+
+<h2>Explore Topics</h2>
+
+<div class="grid">
+
+<a href="#womens-health"class="card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Women's Health</h3>
+
+<p>Periods, PCOS, reproductive health and more.</p>
+
+</a>
+
+<a href="#womens-health" class="card">
+
+<i class="fa-solid fa-baby"></i>
+
+<h3>Pregnancy</h3>
+
+<p>Pregnancy nutrition and prenatal care.</p>
+
+</a>
+
+<a href="#womens-health"class="card">
+
+<i class="fa-solid fa-apple-whole"></i>
+
+<h3>Nutrition</h3>
+
+<p>Healthy meals and vitamins.</p>
+
+</a>
+
+<a href="#womens-health" class="card">
+
+<i class="fa-solid fa-child-reaching"></i>
+
+<h3>Teen Health</h3>
+
+<p>Sleep, puberty, exercise and mental wellbeing.</p>
+
+</a>
+
+<a href="#womens-health" class="card">
+
+<i class="fa-solid fa-virus"></i>
+
+<h3>Diseases</h3>
+
+<p>Symptoms, prevention and treatment.</p>
+
+</a>
+
+<a href="#womens-health" class="card">
+
+<i class="fa-solid fa-kit-medical"></i>
+
+<h3>First Aid</h3>
+
+<p>Emergency care basics.</p>
+
+</a>
+
+</div>
+
+</section>
+
+<section class="dictionary">
+
+    <h2>Medical Dictionary</h2>
+
+    <input
+        type="text"
+        id="dictionaryInput"
+        placeholder="Example: Malaria">
+
+    <button onclick="searchWord()">Search</button>
+
+    <p id="dictionaryResult">
+        Type a medical term to begin.
+    </p>
+
+</section>
+
+<section class="quiz">
+
+<h2>Health Quiz</h2>
+
+<div id="quizBox"></div>
+
+
+<p id="score"></p>
+
+</section>
+
+<section class="progress">
+
+    <h2>Your Progress</h2>
+
+    <div class="progressBar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+    <p id="progressText">0%</p>
+
+</section>
+
+<script src="java.js"></script>
+
+</body>
+</html>

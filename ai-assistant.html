@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aethera AI Assistant</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+Aethera
+</div>
+
+<div class="nav-links">
+
+<a href="Aethera.html">Home</a>
+<a href="ai-assistant.html">AI Assistant</a>
+<a href="health-tracker.html">Health Tracker</a>
+<a href="womens-health.html">Women's Health</a>
+<a href="education.html">Education</a>
+<a href="profile.html">Profile</a>
+
+</div>
+
+</nav>
+
+<section class="ai-section">
+
+<h1>Aethera AI Assistant</h1>
+
+<p>
+Your personal AI health companion.
+Ask questions about nutrition, pregnancy, symptoms and wellness.
+</p>
+
+<div class="chat-container">
+
+<div id="chatBox">
+
+<div class="bot-message">
+👋 Hello! I'm Aethera AI. How can I help you today?
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input
+type="text"
+id="userInput"
+placeholder="Ask a health question..."
+>
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+async function sendMessage(){
+
+const input=document.getElementById("userInput");
+
+const chatBox=document.getElementById("chatBox");
+
+const message=input.value.trim();
+
+if(message==="") return;
+
+
+// User message
+
+chatBox.innerHTML+=`
+
+<div class="user-message">
+
+${message}
+
+</div>
+
+`;
+
+input.value="";
+
+
+// Typing
+
+chatBox.innerHTML+=`
+
+<div class="bot-message" id="typing">
+
+Aethera AI is typing...
+
+</div>
+
+`;
+
+chatBox.scrollTop=chatBox.scrollHeight;
+
+
+try{
+
+const response=await fetch("http://localhost:3000/chat",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+message:message
+
+})
+
+});
+
+
+const data=await response.json();
+
+document.getElementById("typing").remove();
+
+chatBox.innerHTML+=`
+
+<div class="bot-message">
+
+${data.reply}
+
+</div>
+
+`;
+
+chatBox.scrollTop=chatBox.scrollHeight;
+
+}
+
+catch(error){
+
+document.getElementById("typing").remove();
+
+chatBox.innerHTML+=`
+
+<div class="bot-message">
+
+❌ Unable to connect to Aethera AI.
+
+</div>
+
+`;
+
+}
+
+}
+
+
+document.getElementById("userInput").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+sendMessage();
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

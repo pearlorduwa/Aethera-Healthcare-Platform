@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aethera Health Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-heart-pulse"></i> Aethera
+</div>
+
+<ul class="nav-links">
+
+<li><a href="Aethera.html">Home</a></li>
+<li><a href="ai-assistant.html">AI Assistant</a></li>
+<li><a href="health-tracker.html" class="active">Health Tracker</a></li>
+<li><a href="womens-health.html">Women's Health</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="profile.html">Profile</a></li>
+
+</ul>
+
+</nav>
+
+<section class="tracker-header">
+
+<h1>Health Dashboard</h1>
+
+<p>Track your daily health and wellness.</p>
+
+</section>
+
+<section class="tracker-grid">
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-glass-water"></i>
+
+<h2>Water Intake</h2>
+
+<h3 id="waterCount">0 / 8 Glasses</h3>
+
+<button onclick="addWater()">+ Add Glass</button>
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-pills"></i>
+
+<h2>Medication</h2>
+
+<p>Vitamin D</p>
+
+<p>8:00 PM</p>
+
+<input type="checkbox">
+
+<label>Taken Today</label>
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-bed"></i>
+
+<h2>Sleep</h2>
+
+<h3><span id="sleepHours">7</span> Hours</h3>
+
+<input
+type="range"
+min="0"
+max="12"
+value="7"
+oninput="updateSleep(this.value)">
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-utensils"></i>
+
+<h2>Nutrition</h2>
+
+<label>Fruit</label>
+
+<input type="checkbox"><br>
+
+<label>Vegetables</label>
+
+<input type="checkbox"><br>
+
+<label>Protein</label>
+
+<input type="checkbox">
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<h2>Appointments</h2>
+
+<p>No upcoming appointments.</p>
+
+<button>Add Appointment</button>
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-person-dress"></i>
+
+<h2>Women's Health</h2>
+
+<p>Track periods and symptoms.</p>
+
+<button>Open</button>
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-folder-medical"></i>
+
+<h2>Medical Records</h2>
+
+<p>Blood Group</p>
+
+<p>Genotype</p>
+
+<p>Allergies</p>
+
+<button>View</button>
+
+</div>
+
+<div class="tracker-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h2>Weekly Progress</h2>
+
+<progress value="60" max="100"></progress>
+
+<p>60% Complete</p>
+
+</div>
+
+</section>
+
+<script>
+
+let water = 0;
+
+function addWater(){
+
+if(water < 8){
+
+water++;
+
+document.getElementById("waterCount").innerHTML =
+water + " / 8 Glasses";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

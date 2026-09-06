@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aethera Education</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+
+<div class="logo">
+Aethera
+</div>
+
+
+<div class="nav-links">
+<a href="Aethera.html">Home</a>
+<a href="ai-assistant.html">AI Assistant</a>
+<a href="health-tracker.html">Health Tracker</a>
+<a href="womens-health.html">Women's Health</a>
+<a href="education.html">Education</a>
+<a href="profile.html">Profile</a>
+</div>
+
+</nav>
+
+<section class="profile-container">
+
+
+<!-- Profile Header -->
+
+<div class="profile-card">
+
+<i class="fa-solid fa-user-circle profile-icon"></i>
+
+<h1 id="userName">Pearl Orduwa</h1>
+
+<p id="userType">Teen Health Explorer</p>
+
+<p><b>Age:</b> <span id="userAge">14</span></p>
+
+<button onclick="editProfile()">Edit Profile</button>
+
+</div>
+
+
+<div id="editBox" class="edit-box">
+
+<h2>Edit Profile</h2>
+
+<input id="nameInput" placeholder="Enter your name">
+
+<input id="ageInput" placeholder="Enter your age">
+
+<button onclick="saveProfile()">Save Changes</button>
+
+</div>
+
+
+
+
+<!-- Health Statistics -->
+
+<div class="cards">
+
+
+<div class="info-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>Health Stats</h3>
+
+<p>💧 Water: 6/8 glasses</p>
+
+<p>🏃 Exercise: 4 days/week</p>
+
+<p>😊 Mood: Good</p>
+
+</div>
+
+
+
+<div class="info-card">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>Learning</h3>
+
+<p>Courses Completed: 3</p>
+
+<p>Quiz Score: 85%</p>
+
+<p>Learning Streak: 7 days</p>
+
+</div>
+
+
+
+
+<div class="info-card">
+
+<i class="fa-solid fa-award"></i>
+
+<h3>Achievements</h3>
+
+<p>🏅 First Quiz Completed</p>
+
+<p>🌱 Healthy Habit Starter</p>
+
+<p>📚 Health Explorer</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Goals -->
+
+<div class="goals">
+
+<h2>My Health Goals</h2>
+
+
+<div class="goal-list">
+
+<span>✓ Drink More Water</span>
+
+<span>✓ Learn Nutrition</span>
+
+<span>✓ Track Health</span>
+
+<span>○ Improve Sleep</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Certificate -->
+
+<div class="certificate">
+
+
+<h2>Certificates</h2>
+
+<p>You have earned:</p>
+
+
+<button onclick="showCertificate()">
+View Certificate
+</button>
+
+
+</div>
+<div class="health-profile">
+<p><strong>Main Goal:</strong> <span id="profileGoal">Improve healthy habits</span></p>
+
+<p><strong>Region:</strong> <span id="profileRegion">Africa</span></p>
+
+<button onclick="openEditor()">Edit My Health Profile</button>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script>
+
+function showCertificate(){
+
+alert("🏆 Congratulations! You earned the Aethera Health Explorer Certificate!");
+
+}
+
+
+
+function editProfile(){
+
+document.getElementById("editBox").style.display="block";
+
+}
+
+
+
+function saveProfile(){
+
+let name=document.getElementById("nameInput").value;
+
+let age=document.getElementById("ageInput").value;
+
+
+if(name){
+
+document.getElementById("userName").innerHTML=name;
+
+}
+
+
+if(age){
+
+document.getElementById("userAge").innerHTML=age;
+
+}
+
+
+document.getElementById("editBox").style.display="none";
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
+```
