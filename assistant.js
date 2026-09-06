@@ -5,7 +5,7 @@ async function sendMessage() {
 
     try {
 
-        const response = await fetch("http://localhost:3000/chat", {
+        const response = await fetch("https://aethera-healthcare-platform.onrender.com/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
